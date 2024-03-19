@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/../../../.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../../Flutter/flutter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../../java/jogodamas" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../../java/urna" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../../py/antiRagePy" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../../py/ia_tcc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../../web/HotDogGamesSite" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../../web/dotnetMVC/entregaMVC/AspNetCore.Docs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../../web/dotnetMVC/projetoFinal/webMVC" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../../web/jsCalc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../../web/loja_instrumentos" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../../web/webMVC/webMVC" vcs="Git" />
+  </component>
+</project>
