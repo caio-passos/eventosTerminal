@@ -1,4 +1,4 @@
 package eventoPackage;
 
-public interface EventosDAO {
+public interface EventosDAO extends DAO<EventoData>{
 }
