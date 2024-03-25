@@ -1,4 +1,6 @@
 package eventoPackage;
 
-public interface EventosDAO extends DAO<EventoData>{
+import util.GenericDAO;
+
+public interface EventosDAO extends GenericDAO<EventoData> {
 }

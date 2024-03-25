@@ -1,6 +1,10 @@
 package eventoPackage;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class EventoData {
+
     private int idEvento;
     private String nomeEvento;
     private String localEvento;
@@ -10,11 +14,14 @@ public class EventoData {
 
     private String emailProducao;
 
-    private int telefoneProducao;
+    private String telefoneProducao;
 
-    private int horarioEvento;
+    private LocalDateTime horarioEvento;
 
-    public EventoData(int idEvento, String nomeEvento, String localEvento, String categoriaEvento, String descricaoEvento, String emailProducao, int telefoneProducao, int horarioEvento) {
+
+
+    public EventoData(int idEvento, String nomeEvento, String localEvento, String categoriaEvento, String descricaoEvento, String emailProducao, String telefoneProducao, LocalDateTime horarioEvento) {
+
         this.idEvento = idEvento;
         this.nomeEvento = nomeEvento;
         this.localEvento = localEvento;
@@ -26,16 +33,18 @@ public class EventoData {
     }
 
     public String toString() {
-        return "eventoPackage.eventoData{" +
-                "idEvento=" + idEvento +
-                ", nomeEvento='" + nomeEvento + '\'' +
-                ", localEvento='" + localEvento + '\'' +
-                ", categoriaEvento='" + categoriaEvento + '\'' +
-                ", descricaoEvento='" + descricaoEvento + '\'' +
-                ", emailProducao='" + emailProducao + '\'' +
-                ", telefoneProducao=" + telefoneProducao +
-                ", horarioEvento=" + horarioEvento +
-                '}';
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        String formattedDate = horarioEvento.format(formatter);
+        return
+                " nomeEvento: " + nomeEvento + "\n" +
+                " localEvento: " + localEvento + "\n" +
+                " categoriaEvento: " + categoriaEvento + "\n" +
+                " descricaoEvento: " + descricaoEvento + "\n" +
+                " emailProducao: " + emailProducao + "\n" +
+                " telefoneProducao: " + telefoneProducao + "\n" +
+                        //passando o valor da data formatada
+                " horarioEvento: " + formattedDate + "\n"
+                ;
     }
 
     public int getIdEvento() {
@@ -86,19 +95,19 @@ public class EventoData {
         this.emailProducao = emailProducao;
     }
 
-    public int getTelefoneProducao() {
+    public String getTelefoneProducao() {
         return telefoneProducao;
     }
 
-    public void setTelefoneProducao(int telefoneProducao) {
+    public void setTelefoneProducao(String telefoneProducao) {
         this.telefoneProducao = telefoneProducao;
     }
 
-    public int getHorarioEvento() {
+    public LocalDateTime getHorarioEvento() {
         return horarioEvento;
     }
 
-    public void setHorarioEvento(int horarioEvento) {
+    public void setHorarioEvento(LocalDateTime horarioEvento) {
         this.horarioEvento = horarioEvento;
     }
 }
