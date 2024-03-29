@@ -4,8 +4,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class EventoData {
-
-    private int idEvento;
     private String nomeEvento;
     private String localEvento;
     private String categoriaEvento;
@@ -18,11 +16,13 @@ public class EventoData {
 
     private LocalDateTime horarioEvento;
 
+    private int idUsuario;
 
 
-    public EventoData(int idEvento, String nomeEvento, String localEvento, String categoriaEvento, String descricaoEvento, String emailProducao, String telefoneProducao, LocalDateTime horarioEvento) {
 
-        this.idEvento = idEvento;
+
+    public EventoData(String nomeEvento, String localEvento, String categoriaEvento, String descricaoEvento, String emailProducao, String telefoneProducao, LocalDateTime horarioEvento, int idUsuario) {
+
         this.nomeEvento = nomeEvento;
         this.localEvento = localEvento;
         this.categoriaEvento = categoriaEvento;
@@ -30,7 +30,9 @@ public class EventoData {
         this.emailProducao = emailProducao;
         this.telefoneProducao = telefoneProducao;
         this.horarioEvento = horarioEvento;
+        this.idUsuario = idUsuario;
     }
+
 
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
@@ -47,13 +49,6 @@ public class EventoData {
                 ;
     }
 
-    public int getIdEvento() {
-        return idEvento;
-    }
-
-    public void setIdEvento(int idEvento) {
-        this.idEvento = idEvento;
-    }
 
     public String getNomeEvento() {
         return nomeEvento;
@@ -110,4 +105,11 @@ public class EventoData {
     public void setHorarioEvento(LocalDateTime horarioEvento) {
         this.horarioEvento = horarioEvento;
     }
+
+    public int getIdUsuario() {return idUsuario;}
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
 }
+

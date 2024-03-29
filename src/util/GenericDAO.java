@@ -15,7 +15,6 @@ public interface GenericDAO<T> {
     int update(T t)throws SQLException;
 
     int delete(T t) throws SQLException;
-
-
+    int getIdUsuario(T t)throws  SQLException;
 
 }

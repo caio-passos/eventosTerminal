@@ -18,6 +18,31 @@ public class UsuarioData {
         this.telefone = telefone;
     }
 
+    public static class ConfirmadoInfo {
+        private int idUsuario;
+        private String nomeUsuario;
+
+        public ConfirmadoInfo(int idUsuario, String nomeUsuario) {
+            this.idUsuario = idUsuario;
+            this.nomeUsuario = nomeUsuario;
+        }
+
+        public int getIdUsuario() {
+            return idUsuario;
+        }
+
+        public void setIdUsuario(int idUsuario) {
+            this.idUsuario = idUsuario;
+        }
+
+        public String getNomeUsuario() {
+            return nomeUsuario;
+        }
+
+        public void setNomeUsuario(String nomeUsuario) {
+            this.nomeUsuario = nomeUsuario;
+        }
+    }
     public int getIdUsuario() {
         return idUsuario;
     }
@@ -77,6 +102,7 @@ public class UsuarioData {
                 ", telefone='" + telefone + '\'' +
                 '}';
     }
+
 
 
     public UsuarioData() {

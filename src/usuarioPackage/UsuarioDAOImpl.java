@@ -1,5 +1,6 @@
 package usuarioPackage;
 
+import eventoPackage.EventoData;
 import eventoPackage.EventosDAO;
 import util.DatabaseUtil;
 
@@ -105,13 +106,13 @@ public class UsuarioDAOImpl {
         return result;
     }
 
-    public int delete(UsuarioData usuarioData)throws SQLException{
+    public int delete(String nomeUsuario)throws SQLException{
         Connection connection = DatabaseUtil.getConnection();
 
         String sql = "DELETE FROM usuario Where idUsuario = ?";
 
         PreparedStatement ps = connection.prepareStatement(sql);
-        ps.setInt(1, usuarioData.getIdUsuario());
+        ps.setString(1, nomeUsuario);
 
         int result = ps.executeUpdate();
 
@@ -119,5 +120,43 @@ public class UsuarioDAOImpl {
         DatabaseUtil.closeConnection(connection);
 
         return result;
+    }
+    public int atribuiUsuario(int idUsuario, String nomeEvento) throws SQLException {
+        Connection connection = DatabaseUtil.getConnection();
+
+        String sqlUpdate = "UPDATE eventos SET idUsuario = ? WHERE nomeEvento = ?";
+        PreparedStatement psUpdate =
+                connection.prepareStatement(sqlUpdate);
+        psUpdate.setInt(1, idUsuario);
+        psUpdate.setString(2, nomeEvento);
+
+        int atribuicaoUser = psUpdate.executeUpdate();
+
+        // Fechar conexões para evitar memory leaks
+        psUpdate.close();
+        connection.close();
+
+        return atribuicaoUser;
+    }
+
+
+    public List<UsuarioData.ConfirmadoInfo> userConfirmado (int idConfirmado) throws SQLException {
+        Connection connection = DatabaseUtil.getConnection();
+        String sqlConfirm = "SELECT usuario.idUsuario AS idUsuario, usuario.NomeUsuario as nomeUsuario, " +
+                "eventos.NomeEvento" +
+                "FROM usuario" +
+                "LEFT JOIN eventos ON usuario.idUsuario = eventos.idUsuario" +
+                "WHERE eventos.nomeEvento IS NOT NULL ";
+        List<UsuarioData.ConfirmadoInfo>result = new ArrayList<>();
+
+        PreparedStatement psConfirm = connection.prepareStatement(sqlConfirm);
+        ResultSet rs = psConfirm.executeQuery();
+        while (rs.next()){
+           UsuarioData.ConfirmadoInfo info = new UsuarioData.ConfirmadoInfo(rs.getInt("idUsuario"), rs.getString("nomeUsuario"));
+           result.add(info);
+        }
+        return result;
+
+
     }
 }
