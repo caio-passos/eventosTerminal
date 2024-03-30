@@ -2,8 +2,9 @@ package util;
 
 import eventoPackage.EventoDAOImpl;
 import eventoPackage.EventoData;
+import usuarioPackage.UsuarioData;
 
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.List;
 
 public class EventoUtil {
@@ -24,7 +25,23 @@ public class EventoUtil {
     //printar todos os nomes de usuários
     @Override
     public String toString() {
-        return "Usuário ID: " + usuarioID + ", Nome: " + nomeUsuario + "\n";
+        try {
+            String sqlbuscaUsers = "SELECT * FROM usuario ";
+            Connection connection = DatabaseUtil.getConnection();
+            Statement psAllUsers = connection.createStatement();
+            ResultSet rs = psAllUsers.executeQuery(sqlbuscaUsers);
+
+            while (rs.next()){
+
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        UsuarioData usuarioData = new UsuarioData();
+        String nomeUser = usuarioData.getNomeUsuario();
+        int usuarioID = usuarioData.getIdUsuario();
+        return "Usuário ID: " + usuarioID + ", Nome: " + nomeUser + "\n";
     }
 }
 

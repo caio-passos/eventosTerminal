@@ -109,7 +109,7 @@ public class UsuarioDAOImpl {
     public int delete(String nomeUsuario)throws SQLException{
         Connection connection = DatabaseUtil.getConnection();
 
-        String sql = "DELETE FROM usuario Where idUsuario = ?";
+        String sql = "DELETE FROM usuario Where nomeUsuario = ?";
 
         PreparedStatement ps = connection.prepareStatement(sql);
         ps.setString(1, nomeUsuario);
