@@ -7,5 +7,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< HEAD
+=======
+    <orderEntry type="library" name="mysql-connector-java-8.3.0" level="project" />
+>>>>>>> DAOjavaParaTeste
   </component>
 </module>

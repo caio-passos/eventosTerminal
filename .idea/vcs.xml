@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
+<<<<<<< HEAD
     <mapping directory="$PROJECT_DIR$/../../../.." vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../../../../Flutter/flutter" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../../../../java/jogodamas" vcs="Git" />
@@ -13,5 +14,8 @@
     <mapping directory="$PROJECT_DIR$/../../../../web/jsCalc" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../../../../web/loja_instrumentos" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../../../../web/webMVC/webMVC" vcs="Git" />
+=======
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+>>>>>>> DAOjavaParaTeste
   </component>
 </project>
